@@ -8,7 +8,7 @@ An Ecommerce platform where users can sign In and add clothings to their cart an
 <p>-> Firebase</p>
 <p>-> Stripe</p>
 <p>-> Scss</p>
-<p>-> PWA(prgoressive web Application)</p>
+<p>-> PWA(progressive web Application)</p>
 <p>-> GraphQL</p>
 <p>-> Testing using Jest</p>
 
