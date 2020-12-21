@@ -44,7 +44,7 @@ class SignIn extends React.Component {
 				<h2>I already have an account</h2>
 				<span>Sign in with email and password</span>
 
-				<form onSubmit={this.handleSubmit}>
+				<form>
 					<FormInput
 						type="text"
 						name="email"
@@ -62,7 +62,9 @@ class SignIn extends React.Component {
 						required
 					/>
 					<div className="buttons">
-						<CustomButton type="submit">Sign In</CustomButton>
+						<CustomButton onClick={this.handleSubmit} type="submit">
+							Sign In
+						</CustomButton>
 						<CustomButton onClick={signInWithGoggle} isGoggleSignIn>
 							Sign In With Goggle
 						</CustomButton>
