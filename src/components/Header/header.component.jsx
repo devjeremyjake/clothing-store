@@ -6,6 +6,9 @@ import { connect } from 'react-redux';
 
 import './header.style.scss';
 
+import CartIcon from '../cart-icon/cart-icon.component';
+import CartDropDown from '../cart-dropdown/cart-dropdown.component';
+
 const header = ({ currentUser }) => {
 	return (
 		<div className="header">
@@ -31,7 +34,9 @@ const header = ({ currentUser }) => {
 						Sign In
 					</Link>
 				)}
+				<CartIcon />
 			</div>
+			<CartDropDown />
 		</div>
 	);
 };
