@@ -39,6 +39,7 @@ class SignIn extends React.Component {
 	};
 
 	render() {
+		const {handleChange, handleSubmit} = this;
 		return (
 			<div className="sign-in">
 				<h2>I already have an account</h2>
@@ -48,7 +49,7 @@ class SignIn extends React.Component {
 					<FormInput
 						type="text"
 						name="email"
-						handleChange={this.handleChange}
+						handleChange={handleChange}
 						value={this.state.email}
 						label="Email"
 						required
@@ -56,13 +57,13 @@ class SignIn extends React.Component {
 					<FormInput
 						type="password"
 						name="password"
-						handleChange={this.handleChange}
+						handleChange={handleChange}
 						value={this.state.password}
 						label="Password"
 						required
 					/>
 					<div className="buttons">
-						<CustomButton onClick={this.handleSubmit} type="submit">
+						<CustomButton onClick={handleSubmit} type="submit">
 							Sign In
 						</CustomButton>
 						<CustomButton onClick={signInWithGoggle} isGoggleSignIn>
