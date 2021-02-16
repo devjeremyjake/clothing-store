@@ -9,7 +9,11 @@ import CollectionOverview from '../../components/collection-overview/collection-
 import CollectionPage from '../collection/collection.component';
 
 import { fetchCollectionsStartAsync } from '../../redux/shop/shop.actions';
-import { selectIsCollectionFetching } from '../../redux/shop/shop.selectors';
+import {
+	selectIsCollectionFetching,
+	selectIsCollectionsLoaded,
+} from '../../redux/shop/shop.selectors';
+
 const CollectionsOverviewWithSpinner = WithSpinner(CollectionOverview);
 const CollectionPageWithSpinner = WithSpinner(CollectionPage);
 
@@ -20,7 +24,7 @@ class ShopPage extends React.Component {
 	}
 
 	render() {
-		const { match, isCollectionFetching } = this.props;
+		const { match, isCollectionFetching, isCollectionsLoaded } = this.props;
 		return (
 			<div className="shop-page">
 				<Route
@@ -37,7 +41,7 @@ class ShopPage extends React.Component {
 					path={`${match.path}/:collectionId`}
 					render={(props) => (
 						<CollectionPageWithSpinner
-							isLoading={isCollectionFetching}
+							isLoading={!isCollectionsLoaded}
 							{...props}
 						/>
 					)}
@@ -49,6 +53,7 @@ class ShopPage extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
 	isCollectionFetching: selectIsCollectionFetching,
+	isCollectionsLoaded: selectIsCollectionsLoaded,
 });
 
 const dispatchToProps = (dispatch) => ({
